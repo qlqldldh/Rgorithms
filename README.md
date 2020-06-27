@@ -1,2 +1,6 @@
 # Rgorithms
- solutions of various algorithm problems
+
+- Programmers
+- Baekjun
+  - Samsung probs
+
