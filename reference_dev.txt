@@ -1,1 +1,3 @@
 https://perfectacle.github.io/2019/08/23/exit-yanolja-feat-leisureq/  -- experiences of others
+
+https://engineering.linecorp.com/ko/blog/things-i-prepared-to-be-a-line-server-developer/  -- needed experiences to grow better developer
