@@ -9,6 +9,7 @@ def set_data(N, study_time, chapter_score):
 
 def fill_dp(N, T, study_time, chapter_score):
 	dp = [[0 for _ in range(10001)] for _ in range(101)]
+	
 	for n in range(1, N + 1):
 		for t in range(1, T + 1):
 			if t >= study_time[n]:
@@ -20,9 +21,11 @@ def fill_dp(N, T, study_time, chapter_score):
 
 def solution():
 	N, T = set_init_data()
+	
 	study_time = [0 for _ in range(101)]
 	chapter_score = [0 for _ in range(101)]
 	set_data(N, study_time, chapter_score)
+	
 	dp = fill_dp(N, T, study_time, chapter_score)
 
 	return dp[N][T]

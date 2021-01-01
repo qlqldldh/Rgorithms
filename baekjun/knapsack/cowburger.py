@@ -22,10 +22,13 @@ def fill_dp(N,M,K,cheese,f_fries):
 
 def solution():
 	N, M, K = set_init_data()
+	
 	cheese = [0 for _ in range(301)]
 	f_fries = [0 for _ in range(301)]
 	set_data(N, cheese, f_fries)
+	
 	dp = fill_dp(N,M,K,cheese, f_fries)
+	
 	return dp[N][M][K]
 
 
