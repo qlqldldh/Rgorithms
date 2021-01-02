@@ -5,8 +5,7 @@ def solution(nums):
     for i in nums:
         if i not in lst:
             lst.append(i)
-    
-    if len(lst)>=len(nums)/2 : answer=len(nums)/2
-    else : answer=len(lst)
+
+	answer = len(nums)/2 if len(lst) >= len(nums) else len(lst)
 
     return answer
