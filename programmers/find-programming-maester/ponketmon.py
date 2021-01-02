@@ -6,6 +6,5 @@ def solution(nums):
         if i not in lst:
             lst.append(i)
 
-	answer = len(nums)/2 if len(lst) >= len(nums) else len(lst)
+	return len(nums)/2 if len(lst) >= len(nums) else len(lst)
 
-    return answer
