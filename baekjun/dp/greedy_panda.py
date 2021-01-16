@@ -3,8 +3,8 @@ import sys
 sys.setrecursionlimit(10**7)
 
 
-def dfs(start_loc, _bamboos, _dp):
-    row, col = start_loc
+def dfs(location, _bamboos, _dp):
+    row, col = location
     if _dp[row][col] != 0:
         return _dp[row][col]
 
