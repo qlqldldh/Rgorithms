@@ -9,10 +9,8 @@ def join_str(sub_str1, sub_str2):
 
 
 def longer_str(sub_str1, sub_str2):
-    if sub_str1 is None:
-        return sub_str2
-    elif sub_str2 is None:
-        return sub_str1
+    if sub_str1 is None or sub_str2 is None:
+        return sub_str1 or sub_str2
     else:
         return sub_str1 if len(sub_str1) >= len(sub_str2) else sub_str2
 
