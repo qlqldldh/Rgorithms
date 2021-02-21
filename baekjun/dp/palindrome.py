@@ -42,7 +42,5 @@ def solution():
     return answer
 
 
-answer = solution()
-
-for ans in answer:
+for ans in solution():
     print(ans)
