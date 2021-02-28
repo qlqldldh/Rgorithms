@@ -2,18 +2,14 @@ def solution():
     init_s = input()
     exp_s = input()
 
-    last_char = exp_s[-1]
-    stack = []
-    length = len(exp_s)
+    answer = []
 
-    for char in init_s:
-        stack.append(char)
-        if char == last_char and ''.join(stack[-length:]) == exp_s:
-            del stack[-length:]
+    for s in init_s:
+        answer.append(s)
+        if s == exp_s[-1] and ''.join(answer[-len(exp_s):]) == exp_s:
+            del answer[-len(exp_s):]
 
-    answer = ''.join(stack)
-
-    if answer == '':
+    if "".join(answer) == "":
         print("FRULA")
     else:
         print(answer)
