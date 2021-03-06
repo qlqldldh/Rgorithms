@@ -36,6 +36,9 @@ def solution(str1, str2):
             temp = temp[1:]
 
     # Result
-    if len(strlst2) + len(strlst1) == 0: return 65536  # 분모가 0 -> 65536
-    elif cmn==0: return 0  # 분자가 0 -> 0
-    else: return int(cmn / (len(strlst2) + len(strlst1)) * 65536)
+    if len(strlst2) + len(strlst1) == 0:
+        return 65536  # 분모가 0 -> 65536
+    elif cmn == 0:
+        return 0  # 분자가 0 -> 0
+    else:
+        return int(cmn / (len(strlst2) + len(strlst1)) * 65536)

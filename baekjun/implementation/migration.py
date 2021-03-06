@@ -8,7 +8,7 @@ def get_nations_info():
 
     for i in range(1, n + 1):
         lst = list(map(int, input().split()))
-        nations[i][1: n + 1] = lst
+        nations[i][1 : n + 1] = lst
 
     return nations, m, k
 
@@ -48,11 +48,12 @@ def dfs(nations, marking_map, loc, union, min_value, max_value):
     for d in direc:
         row, col = loc[0] + d[0], loc[1] + d[1]
         target_nation = nations[row][col]
-        if is_boundary(target_nation) or marking_map[row][col] or not is_diff_in_range(
-                nations[loc[0]][loc[1]],
-                target_nation,
-                min_value,
-                max_value
+        if (
+            is_boundary(target_nation)
+            or marking_map[row][col]
+            or not is_diff_in_range(
+                nations[loc[0]][loc[1]], target_nation, min_value, max_value
+            )
         ):
             continue
 
@@ -81,9 +82,11 @@ def migrate(nations, min_value, max_value):
                     row, col = i + d[0], j + d[1]
                     target_nation = nations[row][col]
                     if (
-                            is_boundary(target_nation) or
-                            not is_diff_in_range(nations[i][j], target_nation, min_value, max_value) or
-                            marking_map[row][col]
+                        is_boundary(target_nation)
+                        or not is_diff_in_range(
+                            nations[i][j], target_nation, min_value, max_value
+                        )
+                        or marking_map[row][col]
                     ):
                         continue
                     flag = True

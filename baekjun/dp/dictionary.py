@@ -10,10 +10,10 @@ def set_dp_array(dp, n, m):
         dp[i][0] = 1
     for i in range(1, n + m + 1):
         for j in range(1, n + m + 1):
-            if dp[i-1][j-1] + dp[i-1][j] >= INF:
+            if dp[i - 1][j - 1] + dp[i - 1][j] >= INF:
                 dp[i][j] = INF
             else:
-                dp[i][j] = dp[i-1][j-1] + dp[i-1][j]
+                dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j]
 
 
 def solution():

@@ -11,19 +11,20 @@ def is_palindrome(_numbers, _dp, first, last):
 
 
 def fill_dp_by_numbers(_dp, _numbers):
-    for i in range(1, len(_numbers)):  # parsing length
+    for i in range(len(_numbers)):
+        _dp[i][i] = 1
+
+    for i in range(len(_numbers) - 1):
+        if _numbers[i] == _numbers[i + 1]:
+            _dp[i][i + 1] = 1
+
+    for i in range(3, len(_numbers)):  # parsing length
         for j in range(len(_numbers)):  # current location of start point
-            if i == 1:
-                _dp[j][j] = 1
-                continue
-            elif i == 2:
-                if j + 1 >= len(_numbers) or _numbers[j] == _numbers[j + 1]:
-                    _dp[j][j + 1] = 1
-                continue
             first, last = j, i + j - 1
-            if last >= len(_numbers) or not is_palindrome(_numbers, _dp, first, last):
-                continue
-            _dp[first][last] = 1
+            if last >= len(_numbers):
+                break
+            if is_palindrome(_numbers, _dp, first, last):
+                _dp[first][last] = 1
 
 
 def solution():

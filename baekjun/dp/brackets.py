@@ -9,7 +9,9 @@ def get_value_from_dp(_dp, _len, m):
     _dp[_len] = 0
 
     for i in range(2, _len + 1, 2):
-        _dp[_len] += get_value_from_dp(_dp, i - 2, m) * get_value_from_dp(_dp, _len - i, m)
+        _dp[_len] += get_value_from_dp(_dp, i - 2, m) * get_value_from_dp(
+            _dp, _len - i, m
+        )
         _dp[_len] %= m
 
     return _dp[_len]

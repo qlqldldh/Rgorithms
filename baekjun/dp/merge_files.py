@@ -16,7 +16,8 @@ def dfs(l_idx, r_idx, _cost, _sum_cost, _dp):
     for x in range(l_idx, r_idx):
         _dp[l_idx][r_idx] = min(
             _dp[l_idx][r_idx],
-            dfs(l_idx, x, _cost, _sum_cost, _dp) + dfs(x + 1, r_idx, _cost, _sum_cost, _dp)
+            dfs(l_idx, x, _cost, _sum_cost, _dp)
+            + dfs(x + 1, r_idx, _cost, _sum_cost, _dp),
         )
 
     _dp[l_idx][r_idx] += _sum_cost[r_idx] - _sum_cost[l_idx - 1]
@@ -36,7 +37,7 @@ def get_costs():
 def get_sum_of_costs(_cost, _k):
     _sum_cost = [0 for _ in range(_k + 1)]
     for i in range(1, len(_cost)):
-        _sum_cost[i] = _sum_cost[i-1] + _cost[i]
+        _sum_cost[i] = _sum_cost[i - 1] + _cost[i]
 
     return _sum_cost
 

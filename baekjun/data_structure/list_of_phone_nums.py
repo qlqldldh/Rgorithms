@@ -3,10 +3,10 @@ import sys
 
 def is_coherent(_phone_nums):
     for i in range(len(_phone_nums) - 1):
-        if _phone_nums[i] == _phone_nums[i + 1][0:len(_phone_nums[i])]:
-            print('NO')
+        if _phone_nums[i] == _phone_nums[i + 1][0 : len(_phone_nums[i])]:
+            print("NO")
             return
-    print('YES')
+    print("YES")
 
 
 def solution():

@@ -1,5 +1,6 @@
 #  Programmers - 2018 Kakao Blind Recruitment - Cache
 
+
 def set_cache_len(cache_storage, cacheSize):
     if len(cache_storage) > cacheSize:
         del cache_storage[0]

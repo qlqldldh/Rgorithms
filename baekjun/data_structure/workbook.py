@@ -4,8 +4,8 @@ def get_value_from_input():
 
 def sort_except_conds(_lst, _conds):
     for i in range(1, len(_lst) - 1):
-        if _lst[i] > _lst[i+1] and (_lst[i], _lst[i+1]) not in _conds:
-            _lst[i], _lst[i+1] = _lst[i+1], _lst[i]
+        if _lst[i] > _lst[i + 1] and (_lst[i], _lst[i + 1]) not in _conds:
+            _lst[i], _lst[i + 1] = _lst[i + 1], _lst[i]
 
 
 n, m = get_value_from_input()

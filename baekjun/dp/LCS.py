@@ -24,11 +24,15 @@ def solution(str1, str2):
     for i in range(1, dp_row_size):
         for j in range(1, dp_col_size):
             if str1[i] != str2[j]:
-                dp[i][j] = longer_str(dp[i][j-1], dp[i-1][j])
+                dp[i][j] = longer_str(dp[i][j - 1], dp[i - 1][j])
             else:
-                dp[i][j] = join_str(dp[i-1][j-1], str2[j])
+                dp[i][j] = join_str(dp[i - 1][j - 1], str2[j])
 
-    return 0 if dp[dp_row_size - 1][dp_col_size - 1] is None else len(dp[dp_row_size - 1][dp_col_size - 1])
+    return (
+        0
+        if dp[dp_row_size - 1][dp_col_size - 1] is None
+        else len(dp[dp_row_size - 1][dp_col_size - 1])
+    )
 
 
 input_str1, input_str2 = input_init()
